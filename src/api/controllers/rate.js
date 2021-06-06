@@ -2,8 +2,9 @@ const rateService = require('../services/rates');
 
 const PATHS = {
     rates: '/rates/',
+    storedRates: '/rates/stored-rates',
     rate: '/rate/',
-    storedRates: '/rate/stored-rates',
+
 };
 
 const rateController = [
