@@ -10,36 +10,52 @@ const rateController = [
     {
         method: 'GET',
         path: PATHS.rates,
-        handler: (request, h) => {
-            const response = rateService.getRates();
-            return response;
+        options: {
+            tags: ['api'],
+            description: 'Get rates from Fixer.io API',
+            handler: (request, h) => {
+                const response = rateService.getRates();
+                return response;
+            }
         }
     },
 
     {
         method: 'POST',
         path: PATHS.rate,
-        handler: (request, h) => {
-            const res = rateService.createRate(request.payload);
-            return res;
+        options: {
+            tags: ['api'],
+            description: 'Create a new rate',
+            handler: (request, h) => {
+                const res = rateService.createRate(request.payload);
+                return res;
+            }
         }
     },
 
     {
         method: 'DELETE',
         path: PATHS.rate + '{id}',
-        handler: (request, h) => {
-            const res = rateService.deleteRate(request.params.id);
-            return res;
+        options: {
+            tags: ['api'],
+            description: 'Delete a rate',
+            handler: (request, h) => {
+                const res = rateService.deleteRate(request.params.id);
+                return res;
+            }
         }
     },
 
     {
         method: 'GET',
         path: PATHS.storedRates,
-        handler: (request, h) => {
-            const res = rateService.getStoredRates();
-            return res;
+        options: {
+            tags: ['api'],
+            description: 'Get all stored rates',
+            handler: (request, h) => {
+                const res = rateService.getStoredRates();
+                return res;
+            }
         }
     }
 ];
